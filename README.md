@@ -71,3 +71,26 @@ Siga os passos abaixo para configurar e executar o projeto localmente.
    ```bash
    git clone https://github.com/seu-usuario/desafio1-codeigniter.git
    cd desafio1-codeigniter
+
+    ****:
+   ```
+   composer install
+
+***Configure o banco de dados:***
+
+- Crie um banco de dados MySQL.
+
+- Renomeie o arquivo .env.example para .env.
+
+- Abra o arquivo .env e configure as variáveis de ambiente do banco de dados:
+
+   database.default.hostname = localhost
+database.default.database = nome_do_banco
+database.default.username = usuario
+database.default.password = senha
+database.default.DBDriver = MySQLi
+
+**Execute as migrations:**
+
+***As migrations criarão as tabelas necessárias no banco de dados.***
+php spark migrate
