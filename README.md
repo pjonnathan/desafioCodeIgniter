@@ -84,13 +84,22 @@ Siga os passos abaixo para configurar e executar o projeto localmente.
 
 - Abra o arquivo .env e configure as variáveis de ambiente do banco de dados:
 
+```bash
    database.default.hostname = localhost
 database.default.database = nome_do_banco
 database.default.username = usuario
 database.default.password = senha
 database.default.DBDriver = MySQLi
+    ****:
+   ```
+   
 
 **Execute as migrations:**
 
 ***As migrations criarão as tabelas necessárias no banco de dados.***
-php spark migrate
+
+ ```bash
+   php spark migrate
+    ****:
+   ```
+
