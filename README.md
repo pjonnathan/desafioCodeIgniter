@@ -69,7 +69,7 @@ Siga os passos abaixo para configurar e executar o projeto localmente.
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/desafio1-codeigniter.git
+   git clone https://github.com/pjonnathan/desafioCodeIgniter.gir
    cd desafio1-codeigniter
 
     ****:
