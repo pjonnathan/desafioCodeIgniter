@@ -1,68 +1,73 @@
-# CodeIgniter 4 Application Starter
+# Desafio 1 - API de Cadastro de Pedidos de Compra
 
-## What is CodeIgniter?
+Este projeto é uma API REST desenvolvida em **CodeIgniter 4** para gerenciar clientes, produtos e pedidos de compra. Ele foi criado como parte de um desafio técnico, onde o objetivo era implementar um CRUD completo para cada entidade, com validações e relacionamentos entre as tabelas.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Tecnologias Utilizadas
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- **PHP** (CodeIgniter 4)
+- **MySQL** (Banco de dados relacional)
+- **Migrations** (Para criação e gerenciamento do banco de dados)
+- **API REST** (Endpoints para CRUD de clientes, produtos e pedidos)
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+---
 
-## Installation & updates
+## Funcionalidades
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+### 1. Clientes
+- **Cadastro de clientes** com os campos:
+  - CPF/CNPJ
+  - Nome/Razão Social
+- **Endpoints**:
+  - `GET /clientes` - Listar todos os clientes
+  - `GET /clientes/{id}` - Buscar cliente por ID
+  - `POST /clientes` - Criar um novo cliente
+  - `PUT /clientes/{id}` - Atualizar um cliente existente
+  - `DELETE /clientes/{id}` - Excluir um cliente
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### 2. Produtos
+- **Cadastro de produtos** com os campos:
+  - Nome
+  - Descrição
+  - Preço
+- **Endpoints**:
+  - `GET /produtos` - Listar todos os produtos
+  - `GET /produtos/{id}` - Buscar produto por ID
+  - `POST /produtos` - Criar um novo produto
+  - `PUT /produtos/{id}` - Atualizar um produto existente
+  - `DELETE /produtos/{id}` - Excluir um produto
 
-## Setup
+### 3. Pedidos de Compra
+- **Cadastro de pedidos** com os campos:
+  - ID do Cliente
+  - ID do Produto
+  - Quantidade
+  - Total (calculado automaticamente)
+  - Status (Aberto, Pago, Cancelado)
+- **Endpoints**:
+  - `GET /pedidos` - Listar todos os pedidos
+  - `GET /pedidos/{id}` - Buscar pedido por ID
+  - `POST /pedidos` - Criar um novo pedido
+  - `PUT /pedidos/{id}` - Atualizar um pedido existente
+  - `DELETE /pedidos/{id}` - Excluir um pedido
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+---
 
-## Important Change with index.php
+## Instalação
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Siga os passos abaixo para configurar e executar o projeto localmente.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### Pré-requisitos
 
-**Please** read the user guide for a better explanation of how CI4 works!
+- PHP 7.4 ou superior
+- MySQL
+- Composer (para instalar as dependências do CodeIgniter)
+- Git (opcional)
 
-## Repository Management
+### Passo a Passo
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/desafio1-codeigniter.git
+   cd desafio1-codeigniter
